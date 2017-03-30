@@ -14,17 +14,15 @@ treeMethods.addChild = function(value) {
 
 treeMethods.contains = function(target) {
   var wasFound = false;
-  var helper = function(tree) {
-    //console.log(tree.value);
+  var searchTree = function(tree) {
     if (tree.value === target) {
       wasFound = true;
     }
     for (var i = 0; i < tree.children.length; i++) {
-      console.log(i);
-      helper(tree.children[i]);
+      searchTree(tree.children[i]);
     }
   }
-  helper(this);
+  searchTree(this);
   return wasFound;
 };
 
