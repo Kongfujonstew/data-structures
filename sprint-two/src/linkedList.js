@@ -16,21 +16,22 @@ var LinkedList = function() {
 
   list.removeHead = function() {
     var val = list.head.value;
-    var newHead = list.head.next;
+    var newHeadNode = list.head.next;
     list.head.next = null;
-    list.head = newHead;
+    list.head = newHeadNode;
     return val;
   };
 
   list.contains = function(target) {
-    if (list.head.value === target) {
-      console.log(true);
-      return true;
-    } else {
-      list.contains.bind(this.next);
+    var currentNode = list.head;
+    while (currentNode !== null) {
+      if (currentNode.value === target) {
+        return true;
+      }
+      currentNode = currentNode.next;
     }
+    return false;
   };
-
   return list;
 };
 
