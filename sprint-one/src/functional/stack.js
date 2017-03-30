@@ -1,6 +1,5 @@
 var Stack = function() {
   var someInstance = {};
-
   // Use an object with numeric keys to store values
   var storage = {};
   var count = 0;

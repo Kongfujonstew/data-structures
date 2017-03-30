@@ -1,10 +1,7 @@
 var Stack = function() {
 
-
 	var someInstance = Object.create(stackMethods);
-	console.log(someInstance);
 	someInstance.count = 0;
-
 	return someInstance;
 
 };

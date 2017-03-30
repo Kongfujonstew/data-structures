@@ -3,8 +3,8 @@ var Queue = function() {
 
   // Use an object with numeric keys to store values
   var storage = {};
-  var last = 0;
   var first = 1;
+  var last = 0;
   var count = 0;
   // Implement the methods below
 
@@ -15,12 +15,10 @@ var Queue = function() {
   };
 
   someInstance.dequeue = function() {
-      var result = storage[first];
-      storage[first] = undefined;
-      if (result) {
-        first++; 
-      }
-    if (count > 0){
+    var result = storage[first];
+    storage[first] = undefined;
+    if (result) {
+      first++;
       count--;
     }
     return result;

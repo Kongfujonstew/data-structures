@@ -1,11 +1,8 @@
 var Queue = function() {
-  this.last = 0;
   this.first = 1;
+  this.last = 0;
   this.count = 0;
-
 };
-
-
 
 Queue.prototype.enqueue = function(value) {
   this.last++;
@@ -15,18 +12,16 @@ Queue.prototype.enqueue = function(value) {
 
 Queue.prototype.dequeue = function() {
 	var result = this[this.first];
-      this[this.first] = undefined;
-      if (result) {
-        this.first++; 
-      }
-    if (this.count > 0){
-      this.count--;
-    }
-    return result;
+  this[this.first] = undefined;
+  if (result) {
+    this.first++; 
+    this.count--;
+  }
+  return result;
 }
 
 Queue.prototype.size = function() {
-    return this.count;
+  return this.count;
 };
 
 
