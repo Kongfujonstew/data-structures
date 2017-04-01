@@ -39,7 +39,7 @@ HashTable.prototype.remove = function(k) {
     for (var i = 0; i < this._storage.get(index).length; i++) {
       if (this._storage.get(index)[i][0] === k) {
         this._storage.get(index)[i][1] = undefined;
-        //this._storage.get(index)[i][0] = undefined;
+        // this._storage.get(index)[i][0] = undefined;
       }
     }
   }
@@ -66,24 +66,6 @@ HashTable.prototype.rebuildStorage = function(oldLimit, doubleOrHalve){
   }
   return rebuiltHashTable._storage;
 };
-// var rebuildStorage = function(oldHashTable, oldLimit, doubleOrHalve){
-//   var rebuiltHashTable = new HashTable;
-//   if (doubleOrHalve === 'double') {
-//     rebuiltHashTable._limit = oldLimit * 2;
-//   } else if (doubleOrHalve === 'half') {
-//     rebuiltHashTable._limit = oldLimit / 2;
-//   }
-//   rebuiltHashTable._storage = LimitedArray(rebuiltHashTable._limit);
-//   for (var i = 0; i < oldLimit; i++) {
-//     if (oldHashTable._storage.get(i)) {
-//       for (var j = 0; j < oldHashTable._storage.get(i).length; j++) {
-//         rebuiltHashTable.insert(oldHashTable._storage.get(i)[j][0], 
-//           oldHashTable._storage.get(i)[j][1]);
-//       }
-//     }
-//   }
-//   return rebuiltHashTable._storage;
-// };
 
 /*
  * Complexity: What is the time complexity of the above functions?
@@ -91,6 +73,7 @@ HashTable.prototype.rebuildStorage = function(oldLimit, doubleOrHalve){
 insert - O(1)
 retrieve - O(1)
 remove - O(1)
+rebuildStorage - O(n)
 
  */
 
